@@ -6,7 +6,7 @@ namespace FilmesApi.Controllers;
 [ApiController]
 [Route("[controller]")]
 
-public class FilmeController : ControllerContext
+public class FilmeController : ControllerBase
 {
     private static List<Filme> filmes = new List<Filme>();
     private static int id = 0;
