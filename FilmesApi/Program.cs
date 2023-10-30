@@ -15,9 +15,13 @@ builder.Services.AddSwaggerGen(c =>
 
 var connectionString = builder.Configuration.GetConnectionString("FilmeConnection");
 
+//código omitido
+
 builder.Services.AddDbContext<FilmeContext>(opts =>
-   opts.UseMySql(connectionString, ServerVersion.AutoDetect
-   (connectionString)));
+    opts.UseLazyLoadingProxies().UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+
+//código omitido
+
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
